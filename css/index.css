@@ -48,11 +48,14 @@ h1 {
 }
 
 #pfp-img {
-    width: 22rem;
-    height: 22rem;
-    display: relative;
-    position: relative;
-    left: 23rem;
+    width: clamp(20rem, 40%, 45rem);
+    height: clamp(25rem, 80%, 50rem);
+    object-fit: cover;
+    left: 50%;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Calender */
@@ -160,7 +163,8 @@ main {
 
 #login {
     display: block;
-    width: 5%;
+    /* width: 5%; */
+    width: clamp(5rem, 10%, 15rem);
     height: 5%;
     font-size: xx-small;
     background-color: white;
@@ -168,9 +172,9 @@ main {
     border: black solid 2px;
     border-radius: 5px;
     cursor: pointer;
-    position: fixed;
-    top: 20px;
-    right: 20px;
+    position: absolute;
+    top: 2%;
+    right: 2%;
 }
 
 #login:hover {
@@ -180,13 +184,12 @@ main {
 
 #loginModal {
     display: none;
-    position: fixed;
+    position: absolute;
     top: 10%;
-    left: 75%;
-    width: 10%;
+    width: clamp(10rem, 40%, 25rem);
+    height: clamp(15rem, 52%, 50rem);
     background-color: lightgreen;
     padding: 2px;
-    /* transform: translate(-20%, -50%); */
     z-index: 1000;
 }
 
