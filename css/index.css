@@ -1,0 +1,381 @@
+body {
+    background-color: black;
+    color: lightgray;
+}
+
+nav li {
+    list-style-type: none;
+    border: 2px solid black;
+    width: 100px;
+    text-align: center;
+    display: block;
+    margin: 10px;
+    padding: 5px;
+    background-color: white;
+    color: black;
+}
+
+#about-me {
+    border: 2px solid black;
+    border-radius: 50px;
+    background-color: lightgray;
+    color: black;
+    width: 10vw;
+    height: 35vh;
+    margin: 15px;
+    padding: 0;
+    position: fixed;
+    inset: 0 0 auto auto;
+    transform: translate3d(0, 0, 0);
+    text-align: center;
+}
+
+h1 {
+    align-items: center;
+    text-align: center;
+}
+
+/* Calender */
+main {
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+}
+
+.calender {
+    background-color: 111111;
+    border-radius: 10px;
+    box-shadow: 0 0 30px #222222;
+    overflow: hidden;
+    width: 300px;
+    color: white;
+    padding: 20px;
+    display: fixed;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    height: 80%;
+
+    background-color: white;
+    padding: 20px;
+    border: 2px solid black;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 600px;
+    z-index: 1000;
+}
+
+.calenderDiv {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+    height: 80%;
+
+    background-color: white;
+    padding: 20px;
+    border: 2px solid black;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 600px;
+    z-index: 1000;
+}
+
+/* modal window */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: whitesmoke;
+    color: black;
+    padding: 20px 30px;
+    border-radius: 8px;
+    min-width: 300px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+#login {
+    display: block;
+    width: 5%;
+    height: 20%;
+    font-size: xx-small;
+    background-color: white;
+    color: black;
+    border: black solid 2px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#login:hover {
+    background-color: orangered;
+    color: white;
+}
+
+#loginModal .modal-content {
+    width: 300px;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: gray;
+    color: black;
+    position: fixed;
+    top: 35%;
+    left: 35%;
+    width: 30%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* CALENDAR */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+#month-year {
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+}
+
+.weekdays,
+.days {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.days {
+    height: 240px;
+}
+
+.weekdays div,
+.days div {
+    width: 14.28%;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.days div {
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.days div:hover {
+    background-color: white;
+    color: orangered;
+}
+
+.days .today {
+    background-color: orangered;
+    color: white;
+}
+
+.days .fade {
+    color: #555;
+}
+
+#bookBtn {
+    display: block;
+    width: 150px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#bookBtn:hover {
+    background-color: orangered;
+    color: white;
+}
+
+#menu-button {
+    position: relative;
+    display: block;
+    width: 5vw;
+    top: 20px;
+    left: 20px;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 1001;
+    font-size: larger;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.success {
+    color: green;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: gray;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+label {
+    font-size: 14px;
+}
+
+input {
+    padding: 8px;
+    margin: 5px 0;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#submitBtn {
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#editPhotoBtn {
+    background-color: black;
+    color: pink;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 3%;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 360%;
+    left: 8%;
+    display: block;
+}
+
+.message {
+    margin: 15px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ADMIN FEATURES */
+#editPhotoBtn:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
+#addAvailability {
+    display: none;
+    width: 150px;
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#addAvailability:hover {
+    background-color: orangered;
+    color: white;
+    border: 2px solid black;
+}
+
+#availabilityModal .modal-content {
+    width: 50%;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: hotpink;
+    color: black;
+    position: fixed;
+    top: 35%;
+    left: 35%;
+    width: 30%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#availabilityModal input {
+    padding: 8px;
+    margin: 5px 0;
+    width: 20%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}

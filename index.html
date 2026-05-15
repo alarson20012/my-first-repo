@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="images/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="js/index.js"></script>
+</head>
+<body>
+    <header>
+
+    </header>
+      <aside>
+        <div id="menu-button" onclick="document.querySelector('#main-nav').style.display = document.querySelector('#main-nav').style.display === 'block' ? 'none' : 'block'">&#9776;</div>
+        <nav id="main-nav" style="display: none;">
+            <ul>
+                <li><a href="index.html"><img src="images/bat-whitebackground.jpg" alt="Home" width="25%" height="50%" >Home</a></li>
+                <li><a href="side-pages/reviews/index.html"><img src="images/bat-whitebackground.jpg" alt="Reviews" width="25%" height="50%" >Reviews</a></li>
+                <li><a href="side-pages/about-me/index.html"><img src="images/bat-whitebackground.jpg" alt="About Me" width="25%" height="50%" >About Me</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+    <button id="login" onclick="document.querySelector('#login').style.display = document.querySelector('#loginModal').style.display = 'block'">LOG-IN</button>
+    <img src="images/blankpfp.jpg" alt="Profile Picture" width="200px" height="200px" >
+    <button id="editPhotoBtn" style="display: none;"><i class="fa-solid fa-wand-magic-sparkles"></i></button>
+    
+    <!-- LOGIN MODAL -->
+        <div class="modal-content" id="loginModal" style="display: none;">
+            <form>
+            <span id="closeLogin" class="close" onclick="document.querySelector('#loginModal').style.display = 'none'">&times;</span>
+            <h2>Login</h2>
+            <label for="confirmUsername">Confirm Username</label>
+            <input type="text" placeholder="Username" style="width: 50%; margin-bottom: 10px;" required id="username">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" name="confirmPassword" placeholder="Password" style="width: 50%; margin-bottom: 10px;" required id="password">
+            <span id="passwordError" class="error"></span>
+            <p id="message" class="message"></p>
+            <div class="btn">
+                <button type="submit" class="submit-btn" id="submitBtn" onclick="loginForm(event)"><span>Submit</span></button>
+            </div>
+            </form>
+        </div>
+
+    <button id="bookBtn" onclick="document.querySelectorAll('#calendarDiv').forEach(div => div.style.display = 'block')">Book Now</button>
+
+    <!-- calender start -->
+    <div class="calendarDiv" id="calendarDiv" style="display: none;">
+        <div class="calendar">
+            <button id="closeBtn">X</button>
+            <h2>Book a Service</h2>
+            <div class="header">
+                <div id="prev" class="btn"><i class="fa-solid fa-arrow-left"></i></div>
+                <div id="month-year"></div>
+                <div id="next" class="btn"><i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+            <div class="weekdays">
+                <div>SUN</div>
+                <div>MON</div>
+                <div>TUE</div>
+                <div>WED</div>
+                <div>THU</div>
+                <div>FRI</div>
+                <div>SAT</div>
+            </div>
+            <div class="days" id="days"></div>
+        </div>
+    </div>
+
+    <!-- modal window -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <button class="adminFeature" id="addAvailability" onclick="document.getElementById('#availabilityModal').style.display = 'block'">Add Availability</button>
+            <h2 id="modal-date"></h2>
+            <h3>Available Times</h3>
+            <ul id="available-times">
+                <!-- Available times will be populated here -->
+                   <div id="availabilityModal">
+                <ul>
+                    <li>
+                        <label for="start">Start Time</label>
+                        <input type="text" id="start">
+                        <label for="end">End Time</label>
+                        <input type="text" id="end">
+
+                        <label for="service">Which service?</label>
+                        <select id="service">
+                            <option value="service 1">Service 1</option>
+                            <option value="service 2">Service 2</option>
+                            <option value="service 3">Service 3</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="start">Start Time</label>
+                        <input type="text" id="start">
+                        <label for="end">End Time</label>
+                        <input type="text" id="end">
+
+                        <label for="service">Which service?</label>
+                        <select id="service">
+                            <option value="service 1">Service 1</option>
+                            <option value="service 2">Service 2</option>
+                            <option value="service 3">Service 3</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="start">Start Time</label>
+                        <input type="text" id="start">
+                        <label for="end">End Time</label>
+                        <input type="text" id="end">
+
+                        <label for="service">Which service?</label>
+                        <select id="service">
+                            <option value="service 1">Service 1</option>
+                            <option value="service 2">Service 2</option>
+                            <option value="service 3">Service 3</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="start">Start Time</label>
+                        <input type="text" id="start">
+                        <label for="end">End Time</label>
+                        <input type="text" id="end">
+
+                        <label for="service">Which service?</label>
+                        <select id="service">
+                            <option value="service 1">Service 1</option>
+                            <option value="service 2">Service 2</option>
+                            <option value="service 3">Service 3</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="start">Start Time</label>
+                        <input type="text" id="start">
+                        <label for="end">End Time</label>
+                        <input type="text" id="end">
+
+                        <label for="service">Which service?</label>
+                        <select id="service">
+                            <option value="service 1">Service 1</option>
+                            <option value="service 2">Service 2</option>
+                            <option value="service 3">Service 3</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="start">Start Time</label>
+                        <input type="text" id="start">
+                        <label for="end">End Time</label>
+                        <input type="text" id="end">
+
+                        <label for="service">Which service?</label>
+                        <select id="service">
+                            <option value="service 1">Service 1</option>
+                            <option value="service 2">Service 2</option>
+                            <option value="service 3">Service 3</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+            </ul>
+        </div>
+    </div>
+
+    
+
+    <script src="js/index.js"></script>
+    <!-- calender end -->
+    
+    </main>
+</body>
+</html>
