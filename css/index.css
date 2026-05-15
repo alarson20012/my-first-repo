@@ -50,7 +50,7 @@ h1 {
 #pfp-img {
     width: clamp(20rem, 40%, 45rem);
     height: clamp(25rem, 80%, 50rem);
-    object-fit: cover;
+    object-fit: scale-down;
     left: 50%;
     top: 50%;
     display: flex;
