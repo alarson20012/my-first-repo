@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <h1>test run</h1>
+    
     </header>
       <aside>
         <div id="menu-button" onclick="document.querySelector('#main-nav').style.display = document.querySelector('#main-nav').style.display === 'block' ? 'none' : 'block'">&#9776;</div>
@@ -25,17 +25,16 @@
     </aside>
     <main>
     <button id="login" onclick="document.querySelector('#login').style.display = document.querySelector('#loginModal').style.display = 'block'">LOG-IN</button>
-    <img src="images/blankpfp.jpg" alt="Profile Picture" width="200px" height="200px" >
+    <img src="images/blankpfp.jpg" alt="Profile Picture" id="pfp-img">
     <button id="editPhotoBtn" style="display: none;"><i class="fa-solid fa-wand-magic-sparkles"></i></button>
     
     <!-- LOGIN MODAL -->
+        <div id="loginModal-overlay" class="modal-overlay"></div>
         <div class="modal-content" id="loginModal" style="display: none;">
             <form>
             <span id="closeLogin" class="close" onclick="document.querySelector('#loginModal').style.display = 'none'">&times;</span>
             <h2>Login</h2>
-            <label for="confirmUsername">Confirm Username</label>
             <input type="text" placeholder="Username" style="width: 50%; margin-bottom: 10px;" required id="username">
-            <label for="confirmPassword">Confirm Password</label>
             <input type="password" name="confirmPassword" placeholder="Password" style="width: 50%; margin-bottom: 10px;" required id="password">
             <span id="passwordError" class="error"></span>
             <p id="message" class="message"></p>
