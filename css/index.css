@@ -48,11 +48,11 @@ h1 {
 }
 
 #pfp-img {
-    width: 40%;
-    height: 80%;
+    width: 22rem;
+    height: 22rem;
     display: relative;
     position: relative;
-    left: 30%;
+    left: 23rem;
 
 }
 
