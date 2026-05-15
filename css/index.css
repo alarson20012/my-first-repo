@@ -354,12 +354,12 @@ input {
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    width: 3%;
-    position: relative;
+    width: 10%;
+    height: 10%;
+    position: fixed;
+    left: 70%;
     background-color: rgba(0, 0, 0, 0.5);
-    bottom: 360%;
-    left: 8%;
-    display: block;
+    top: 20%;
 }
 
 .message {
