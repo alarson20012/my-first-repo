@@ -185,7 +185,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Edit Photo Button
     editPhotoBtn.addEventListener("click", function () {
         document.querySelector("#editPhotoModal").style.display = "block";
-    })
+    });
+
 
     // uploadBtn.addEventListener("click", function () {
     //     const fileInput = document.getElementById("photoUpload");

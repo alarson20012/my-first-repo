@@ -1,0 +1,25 @@
+header {
+    background-color: black;
+    text-align: center;
+    color: whitesmoke;
+    height: 20vh;
+    align-content: center;
+}
+
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+    line-height: 1.6;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
