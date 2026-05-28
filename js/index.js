@@ -1,5 +1,12 @@
 // Calendar Start
 document.addEventListener("DOMContentLoaded", function () {
+    // Profile Picture
+    const savedImg = localStorage.getItem("profilePicture");
+    if (savedImg) {
+        document.getElementById("pfp-img").src = savedImg;
+    }
+
+
     const monthYear = document.getElementById("month-year");
     const daysContainer = document.getElementById("days");
     const prevButton = document.getElementById("prev");
@@ -172,18 +179,38 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector("#editPhotoModal").style.display = "block";
     })
 
-    uploadBtn.addEventListener("click", function () {
-        const fileInput = document.getElementById("photoUpload");
-        const file = fileInput.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                document.getElementById("pfp-img").src = e.target.result;
-                document.querySelector("#editPhotoModal").style.display = "none";
-            }
-            reader.readAsDataURL(file);
-        }
 
-
-    });
 });
+
+uploadBtn.addEventListener("click", function () {
+    const fileInput = document.getElementById("photoUpload");
+    const file = fileInput.files && fileInput.files[0];
+    if (!file) {
+        alert("Please select an image file.");
+        return;
+    }
+
+    if (!file.type.startsWith("image/")) {
+        alert("Please select a valid image file.");
+        return;
+    }
+
+    const reader = new FileReader();
+
+
+    reader.onload = function (e) {
+        const dataUrl = e.target.result;
+
+        document.getElementById("pfp-img").src = dataUrl;
+
+        // Save to localStorage
+        localStorage.setItem("profilePicture", dataUrl);
+
+        const modal = document.getElementById("editPhotoModal");
+        modal.style.display = "none";
+    };
+
+    reader.readAsDataURL(file);
+
+});
+
