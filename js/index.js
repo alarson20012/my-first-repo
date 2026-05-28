@@ -1,5 +1,13 @@
 // Calendar Start
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
+    try {
+        const response = await fetch("/photo-url.json");
+        const data = await response.json();
+        document.getElementById("pfp-img").src = data.url;
+    } catch (error) {
+        console.error("Error fetching profile picture URL:", error);
+    }
+
     // Profile Picture
     const savedImg = localStorage.getItem("profilePicture");
     if (savedImg) {
@@ -193,6 +201,23 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const reader = new FileReader();
+
+        const formData = new FormData();
+        formData.append("photo", file);
+
+        try {
+            const response = fetch("/upload-photo", {
+                method: "POST",
+                body: formData
+            })
+
+            const data = await response.json();
+
+            document.getElementById("pfp-img").src = data.url;
+        } catch (error) {
+            console.error("Error uploading photo:", error);
+        }
+
 
 
         reader.onload = function (e) {
