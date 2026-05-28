@@ -1,18 +1,18 @@
 // Calendar Start
-document.addEventListener("DOMContentLoaded", async function () {
-    try {
-        const response = await fetch("/photo-url.json");
-        const data = await response.json();
-        document.getElementById("pfp-img").src = data.url;
-    } catch (error) {
-        console.error("Error fetching profile picture URL:", error);
-    }
+document.addEventListener("DOMContentLoaded", function () {
+    // try {
+    //     const response = await fetch("/photo-url.json");
+    //     const data = await response.json();
+    //     document.getElementById("pfp-img").src = data.url;
+    // } catch (error) {
+    //     console.error("Error fetching profile picture URL:", error);
+    // }
 
-    // Profile Picture
-    const savedImg = localStorage.getItem("profilePicture");
-    if (savedImg) {
-        document.getElementById("pfp-img").src = savedImg;
-    }
+    // // Profile Picture
+    // const savedImg = localStorage.getItem("profilePicture");
+    // if (savedImg) {
+    //     document.getElementById("pfp-img").src = savedImg;
+    // }
 
 
     const monthYear = document.getElementById("month-year");
@@ -187,54 +187,54 @@ document.addEventListener("DOMContentLoaded", async function () {
         document.querySelector("#editPhotoModal").style.display = "block";
     })
 
-    uploadBtn.addEventListener("click", function () {
-        const fileInput = document.getElementById("photoUpload");
-        const file = fileInput.files && fileInput.files[0];
-        if (!file) {
-            alert("Please select an image file.");
-            return;
-        }
+    // uploadBtn.addEventListener("click", function () {
+    //     const fileInput = document.getElementById("photoUpload");
+    //     const file = fileInput.files && fileInput.files[0];
+    //     if (!file) {
+    //         alert("Please select an image file.");
+    //         return;
+    //     }
 
-        if (!file.type.startsWith("image/")) {
-            alert("Please select a valid image file.");
-            return;
-        }
+    //     if (!file.type.startsWith("image/")) {
+    //         alert("Please select a valid image file.");
+    //         return;
+    //     }
 
-        const reader = new FileReader();
+    //     const reader = new FileReader();
 
-        const formData = new FormData();
-        formData.append("photo", file);
+    //     const formData = new FormData();
+    //     formData.append("photo", file);
 
-        try {
-            const response = fetch("/upload-photo", {
-                method: "POST",
-                body: formData
-            })
+    //     try {
+    //         const response = fetch("/upload-photo", {
+    //             method: "POST",
+    //             body: formData
+    //         })
 
-            const data = await response.json();
+    //         const data = await response.json();
 
-            document.getElementById("pfp-img").src = data.url;
-        } catch (error) {
-            console.error("Error uploading photo:", error);
-        }
+    //         document.getElementById("pfp-img").src = data.url;
+    //     } catch (error) {
+    //         console.error("Error uploading photo:", error);
+    //     }
 
 
 
-        reader.onload = function (e) {
-            const dataUrl = e.target.result;
+    //     reader.onload = function (e) {
+    //         const dataUrl = e.target.result;
 
-            document.getElementById("pfp-img").src = dataUrl;
+    //         document.getElementById("pfp-img").src = dataUrl;
 
-            // Save to localStorage
-            localStorage.setItem("profilePicture", dataUrl);
+    //         // Save to localStorage
+    //         localStorage.setItem("profilePicture", dataUrl);
 
-            const modal = document.getElementById("editPhotoModal");
-            modal.style.display = "none";
-        };
+    //         const modal = document.getElementById("editPhotoModal");
+    //         modal.style.display = "none";
+    //     };
 
-        reader.readAsDataURL(file);
+    //     reader.readAsDataURL(file);
 
-    });
+    // });
 
 });
 
