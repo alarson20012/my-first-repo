@@ -356,7 +356,7 @@ input {
     border-radius: 5px;
     width: 10%;
     height: 10%;
-    position: fixed;
+    position: absolute;
     left: 70%;
     background-color: rgba(0, 0, 0, 0.5);
     top: 20%;

@@ -167,4 +167,23 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector("#availabilityModal").style.display = "block";
     });
 
+    // Edit Photo Button
+    editPhotoBtn.addEventListener("click", function () {
+        document.querySelector("#editPhotoModal").style.display = "block";
+    })
+
+    uploadBtn.addEventListener("click", function () {
+        const fileInput = document.getElementById("photoUpload");
+        const file = fileInput.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById("pfp-img").src = e.target.result;
+                document.querySelector("#editPhotoModal").style.display = "none";
+            }
+            reader.readAsDataURL(file);
+        }
+
+
+    });
 });
