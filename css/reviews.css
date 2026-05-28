@@ -12,3 +12,83 @@ body {
     margin: 0;
     padding: 0;
 }
+
+main {
+    color: white;
+}
+
+div {
+    height: 20vh;
+    margin: 10px;
+    padding: 10px;
+}
+
+#reviews-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: whitesmoke;
+    color: black;
+    width: 80%;
+    margin: 20px auto;
+}
+
+#add-review-btn {
+    border: black solid 1px;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    position: absolute;
+    left: 80%;
+    top: 25%;
+}
+
+#add-review-btn:hover {
+    background-color: orangered;
+    cursor: pointer;
+    color: whitesmoke;
+}
+
+#stars {
+    height: 10vh;
+    width: 20vw;
+    background-color: black;
+    margin: auto;
+    align-items: center;
+    position: static;
+    display: flex;
+    left: 50vw;
+
+    text-align: center;
+    align-content: center;
+}
+
+#first-star {
+    color: gold;
+    font-size: xx-large;
+    margin-right: 5px;
+}
+
+#second-star {
+    color: gold;
+    font-size: xx-large;
+    margin-right: 5px;
+}
+
+#third-star {
+    color: gold;
+    font-size: xx-large;
+    margin-right: 5px;
+}
+
+#fourth-star {
+    color: gold;
+    font-size: xx-large;
+    margin-right: 5px;
+}
+
+#fifth-star {
+    color: gold;
+    font-size: xx-large;
+    margin-right: 5px;
+}
