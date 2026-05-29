@@ -81,12 +81,25 @@
     <div id="modal" class="modal hidden">
         <div class="modal-content">
             <span id="close-modal" class="close">&times;</span>
+            <button id="save">Save</button>
             <button class="adminFeature" id="addAvailability" onclick="document.getElementById('#availabilityModal').style.display = 'block'">Add Availability</button>
             <h2 id="modal-date"></h2>
             <h3>Available Times</h3>
             <ul id="available-times">
+    <div id="publicSchedule" class="modal hidden"></div>
+        <ul>
+            <li> available time (input from admin) <button id="scheduleBtn">Schedule</button></li>
+            <li> available time (input from admin)<button id="scheduleBtn">Schedule</button></li>
+            <li> available time (input from admin)<button id="scheduleBtn">Schedule</button></li>
+            <li> available time (input from admin)<button id="scheduleBtn">Schedule</button></li>
+            <li> available time (input from admin)<button id="scheduleBtn">Schedule</button></li>
+            <li> available time (input from admin)<button id="scheduleBtn">Schedule</button></li>
+
+        </ul>
+    </div>
+                
                 <!-- Available times will be populated here -->
-                   <div id="availabilityModal">
+                <div id="availabilityModal" class="modal hidden">
                 <ul>
                     <li class="row">
                         <label for="start" class="field">Start Time</label>
@@ -170,6 +183,20 @@
             </div>
             </ul>
         </div>
+    </div>
+
+    <div id="publicSchedule" class="modal hidden">
+        <span id="closePublic">&times;</span>
+        <h1>public view schedule</h1>
+        <ul>
+            <li> available time (input from admin) <button id="scheduleBtn">Schedule</button></li>
+            <li> available time (input from admin)<button id="scheduleBtn">Schedule</button></li>
+            <li> available time (input from admin)<button id="scheduleBtn">Schedule</button></li>
+            <li> available time (input from admin)<button id="scheduleBtn">Schedule</button></li>
+            <li> available time (input from admin)<button id="scheduleBtn">Schedule</button></li>
+            <li> available time (input from admin)<button id="scheduleBtn">Schedule</button></li>
+
+        </ul>
     </div>
 
     

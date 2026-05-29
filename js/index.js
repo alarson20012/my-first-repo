@@ -159,11 +159,12 @@ document.addEventListener("DOMContentLoaded", function () {
             message.textContent = "Login successful!";
             message.style.color = "green";
             editPhotoBtn.style.display = "block";
-            addAvailability.style.display = "block";
+            addAvailability.style.display = "block"
+            save.style.display = "block";
             loginModal.style.display = "none";
             e.preventDefault();
         } else {
-
+            publicSchedule.style.display = "block";
             message.textContent = "Invalid username or password.";
             message.style.color = "red";
             e.preventDefault();
@@ -237,6 +238,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // });
 
+
+    // public schedule modal
+    closePublic.addEventListener("click", () => {
+        document.querySelector("#publicSchedule").style.display = "none";
+    })
 });
 
 
