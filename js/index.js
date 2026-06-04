@@ -243,7 +243,47 @@ document.addEventListener("DOMContentLoaded", function () {
     closePublic.addEventListener("click", () => {
         document.querySelector("#publicSchedule").style.display = "none";
     })
-});
 
+    // inseting availability into calendar
+    save.addEventListener("click", function () {
+        // FIRST AVAILABILITY
+        const startTime = document.getElementById("first-start").value;
+        const endTime = document.getElementById("first-end").value;
+        const service = document.getElementById("first-service").value;
+        document.getElementById("first-avail").textContent = `${startTime} - ${endTime} : ${service}`;
+
+        // SECOND AVAILABILITY
+        const secondStartTime = document.getElementById("second-start").value;
+        const secondEndTime = document.getElementById("second-end").value;
+        const secondService = document.getElementById("second-service").value;
+        document.getElementById("second-avail").textContent = `${secondStartTime} - ${secondEndTime} : ${secondService}`;
+
+        // THIRD AVAILABILITY
+        const thirdStartTime = document.getElementById("third-start").value;
+        const thirdEndTime = document.getElementById("third-end").value;
+        const thirdService = document.getElementById("third-service").value;
+        document.getElementById("third-avail").textContent = `${thirdStartTime} - ${thirdEndTime} : ${thirdService}`;
+
+        // FOURTH AVAILABILITY
+        const fourthStartTime = document.getElementById("fourth-start").value;
+        const fourthEndTime = document.getElementById("fourth-end").value;
+        const fourthService = document.getElementById("fourth-service").value;
+        document.getElementById("fourth-avail").textContent = `${fourthStartTime} - ${fourthEndTime} : ${fourthService}`;
+
+        // FIFTH AVAILABILITY
+        const fifthStartTime = document.getElementById("fifth-start").value;
+        const fifthEndTime = document.getElementById("fifth-end").value;
+        const fifthService = document.getElementById("fifth-service").value;
+        document.getElementById("fifth-avail").textContent = `${fifthStartTime} - ${fifthEndTime} : ${fifthService}`;
+
+        // SIXTH AVAILABILITY
+        const sixthStartTime = document.getElementById("sixth-start").value;
+        const sixthEndTime = document.getElementById("sixth-end").value;
+        const sixthService = document.getElementById("sixth-service").value;
+        document.getElementById("sixth-avail").textContent = `${sixthStartTime} - ${sixthEndTime} : ${sixthService}`;
+
+        document.getElementById("availabilityModal").style.display = "none";
+    });
+});
 
 

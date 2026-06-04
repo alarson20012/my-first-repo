@@ -80,108 +80,116 @@
     <!-- modal window -->
     <div id="modal" class="modal hidden">
         <div class="modal-content">
-            <span id="close-modal" class="close">&times;</span>
-            <button id="save">Save</button>
+            <button id="close-modal" class="close" onclick="document.querySelector('#availabilityModal').style.display = 'none'">&times;</button>
+         
             <button class="adminFeature" id="addAvailability" onclick="document.getElementById('#availabilityModal').style.display = 'block'">Add Availability</button>
             <h2 id="modal-date"></h2>
             <h3>Available Times</h3>
             <ul id="available-times">
-    <div id="publicSchedule" class="modal hidden"></div>
-        <ul>
-            <li> available time (input from admin) <button id="scheduleBtn">Schedule</button></li>
-            <li> available time (input from admin)<button id="scheduleBtn">Schedule</button></li>
-            <li> available time (input from admin)<button id="scheduleBtn">Schedule</button></li>
-            <li> available time (input from admin)<button id="scheduleBtn">Schedule</button></li>
-            <li> available time (input from admin)<button id="scheduleBtn">Schedule</button></li>
-            <li> available time (input from admin)<button id="scheduleBtn">Schedule</button></li>
-
-        </ul>
-    </div>
+        <div id="publicSchedule" class="modal hidden"></div>
+            <ul>
+                <li id="first-avail"><button id="scheduleBtn">Schedule</button></li>
+                <li id="second-avail"><button id="scheduleBtn">Schedule</button></li>
+                <li id="third-avail"><button id="scheduleBtn">Schedule</button></li>
+                <li id="fourth-avail"><button id="scheduleBtn">Schedule</button></li>
+                <li id="fifth-avail"><button id="scheduleBtn">Schedule</button></li>
+                <li id="sixth-avail"><button id="scheduleBtn">Schedule</button></li>
+            </ul>
+        </div>
                 
                 <!-- Available times will be populated here -->
                 <div id="availabilityModal" class="modal hidden">
-                <ul>
-                    <li class="row">
-                        <label for="start" class="field">Start Time</label>
-                        <input type="time" id="start" class="field">
-                        <label for="end" class="field">End Time</label>
-                        <input type="time" id="end" class="field">
+                    <ul>
+                        <button id="close-availability" class="close">&times;</button>
+                      
+                        <h2> Add Availability </h2>
+                        <li class="row">
+                            <!-- FIRST AVAILABILITY -->
+                            <label for="start" class="field">Start Time</label>
+                            <input type="time" id="first-start" class="field">
+                            <label for="end" class="field">End Time</label>
+                            <input type="time" id="first-end" class="field">
 
-                        <label for="service" class="field" style="display: inline;">Which service?</label>
-                        <select id="service" class="field">
-                            <option value="service 1">Service 1</option>
-                            <option value="service 2">Service 2</option>
-                            <option value="service 3">Service 3</option>
-                        </select>
-                    </li>
-                    <li class="row">
-                        <label for="start" class="field">Start Time</label>
-                        <input type="time" id="start" class="field">
-                        <label for="end" class="field">End Time</label>
-                        <input type="time" id="end" class="field">
+                            <label for="service" class="field" style="display: inline;">Which service?</label>
+                            <select id="first-service" class="field">
+                                <option value="service 1">Service 1</option>
+                                <option value="service 2">Service 2</option>
+                                <option value="service 3">Service 3</option>
+                            </select>
+                        </li>
+                        <li class="row">
+                            <!-- SECOND AVAILABILITY -->
+                            <label for="start" class="field">Start Time</label>
+                            <input type="time" id="second-start" class="field">
+                            <label for="end" class="field">End Time</label>
+                            <input type="time" id="second-end" class="field">
 
-                        <label for="service" class="field">Which service?</label>
-                        <select id="service" class="field">
-                            <option value="service 1">Service 1</option>
-                            <option value="service 2">Service 2</option>
-                            <option value="service 3">Service 3</option>
-                        </select>
-                    </li>
-                    <li class="row">
-                        <label for="start">Start Time</label>
-                        <input type="time" id="start">
-                        <label for="end">End Time</label>
-                        <input type="time" id="end">
+                            <label for="service" class="field">Which service?</label>
+                            <select id="second-service" class="field">
+                                <option value="service 1">Service 1</option>
+                                <option value="service 2">Service 2</option>
+                                <option value="service 3">Service 3</option>
+                            </select>
+                        </li>
+                        <li class="row">
+                            <!-- THIRD AVAILABILITY -->
+                            <label for="start" class="field">Start Time</label>
+                            <input type="time" id="third-start" class="field">
+                            <label for="end" class="field">End Time</label>
+                            <input type="time" id="third-end" class="field">
 
-                        <label for="service">Which service?</label>
-                        <select id="service">
-                            <option value="service 1">Service 1</option>
-                            <option value="service 2">Service 2</option>
-                            <option value="service 3">Service 3</option>
-                        </select>
-                    </li>
-                    <li class="row">
-                        <label for="start">Start Time</label>
-                        <input type="time" id="start">
-                        <label for="end">End Time</label>
-                        <input type="time" id="end">
+                            <label for="service" class="field">Which service?</label>
+                            <select id="third-service" class="field">
+                                <option value="service 1">Service 1</option>
+                                <option value="service 2">Service 2</option>
+                                <option value="service 3">Service 3</option>
+                            </select>
+                        </li>
+                        <li class="row">
+                            <!-- FOURTH AVAILABILITY -->
+                            <label for="start" class="field">Start Time</label>
+                            <input type="time" id="fourth-start" class="field">
+                            <label for="end" class="field">End Time</label>
+                            <input type="time" id="fourth-end" class="field">
 
-                        <label for="service">Which service?</label>
-                        <select id="service">
-                            <option value="service 1">Service 1</option>
-                            <option value="service 2">Service 2</option>
-                            <option value="service 3">Service 3</option>
-                        </select>
-                    </li>
-                    <li class="row">
-                        <label for="start">Start Time</label>
-                        <input type="time" id="start">
-                        <label for="end">End Time</label>
-                        <input type="time" id="end">
+                            <label for="service" class="field">Which service?</label>
+                            <select id="fourth-service" class="field">
+                                <option value="service 1">Service 1</option>
+                                <option value="service 2">Service 2</option>
+                                <option value="service 3">Service 3</option>
+                            </select>
+                        </li>
+                        <li class="row">
+                            <!-- FIFTH AVAILABILITY -->
+                            <label for="start" class="field">Start Time</label>
+                            <input type="time" id="fifth-start" class="field">
+                            <label for="end" class="field">End Time</label>
+                            <input type="time" id="fifth-end" class="field">
 
-                        <label for="service">Which service?</label>
-                        <select id="service">
-                            <option value="service 1">Service 1</option>
-                            <option value="service 2">Service 2</option>
-                            <option value="service 3">Service 3</option>
-                        </select>
-                    </li>
-                    <li class="row">
-                        <label for="start">Start Time</label>
-                        <input type="time" id="start">
-                        <label for="end">End Time</label>
-                        <input type="time" id="end">
+                            <label for="service" class="field">Which service?</label>
+                            <select id="fifth-service" class="field">
+                                <option value="service 1">Service 1</option>
+                                <option value="service 2">Service 2</option>
+                                <option value="service 3">Service 3</option>
+                            </select>
+                        </li>
+                        <li class="row">
+                            <!-- SIXTH AVAILABILITY -->
+                            <label for="start" class="field">Start Time</label>
+                            <input type="time" id="sixth-start" class="field">
+                            <label for="end" class="field">End Time</label>
+                            <input type="time" id="sixth-end" class="field">
 
-                        <label for="service">Which service?</label>
-                        <select id="service">
-                            <option value="service 1">Service 1</option>
-                            <option value="service 2">Service 2</option>
-                            <option value="service 3">Service 3</option>
-                        </select>
-                    </li>
-                </ul>
-            </div>
-            </ul>
+                            <label for="service" class="field">Which service?</label>
+                            <select id="sixth-service" class="field">
+                                <option value="service 1">Service 1</option>
+                                <option value="service 2">Service 2</option>
+                                <option value="service 3">Service 3</option>
+                            </select>
+                        </li>
+                        <button id="save">Save</button>
+                    </ul>
+                </div>
         </div>
     </div>
 
