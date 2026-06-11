@@ -11,7 +11,6 @@
 </head>
 <body>
     <header>
-    
     </header>
       <aside>
         <div id="menu-button" onclick="document.querySelector('#main-nav').style.display = document.querySelector('#main-nav').style.display === 'block' ? 'none' : 'block'">&#9776;</div>
@@ -31,11 +30,15 @@
         <div class="modal-content">
             <span id="closeEditPhoto" class="close" onclick="document.querySelector('#editPhotoModal').style.display = 'none'">&times;</span>
             <h2>Edit Profile Picture</h2>
-            <input type="file" id="photoUpload" accept="image/*">
+           <input type="file" id="photoInput">
             <button id="uploadBtn">Upload</button>
+           
+            <p id="status"></p>
         </div>
     </div>
     
+     <img id="sharedPhoto" src="" alt="Shared Photo">
+
     <!-- LOGIN MODAL -->
         <div id="loginModal-overlay" class="modal-overlay"></div>
         <div class="modal-content" id="loginModal" style="display: none;">
@@ -51,6 +54,41 @@
             </div>
             </form>
         </div>
+
+            <!-- JAVASCRIPT -->
+    <script>
+    // Load saved image on page load
+    fetch("currentPhoto.json")
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("sharedPhoto").src = data.url;
+    });
+
+    // Upload logic
+    document.getElementById("uploadBtn").onclick = function () {
+        const file = document.getElementById("photoInput").files[0];
+        if (!file) return alert("Choose a file first");
+
+        const formData = new FormData();
+        formData.append("photo", file);
+
+        fetch("upload.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(r => r.text())
+        .then(text => {
+            console.log(text);
+
+        // Reload image after upload
+        fetch("currentPhoto.json")
+        .then(res => res.json())
+        .then(data => {
+        document.getElementById("sharedPhoto").src = data.url;
+        });
+        });
+    };
+</script>
 
     <button id="bookBtn" onclick="document.querySelectorAll('#calendarDiv').forEach(div => div.style.display = 'block')">Book Now</button>
 
@@ -80,13 +118,14 @@
     <!-- modal window -->
     <div id="modal" class="modal hidden">
         <div class="modal-content">
-            <button id="close-modal" class="close" onclick="document.querySelector('#availabilityModal').style.display = 'none'">&times;</button>
+        <button id="close-modal" class="close" onclick="document.querySelector('#availabilityModal').style.display = 'none'">&times;</button>
          
             <button class="adminFeature" id="addAvailability" onclick="document.getElementById('#availabilityModal').style.display = 'block'">Add Availability</button>
             <h2 id="modal-date"></h2>
             <h3>Available Times</h3>
             <ul id="available-times">
         <div id="publicSchedule" class="modal hidden"></div>
+        
             <ul>
                 <li id="first-avail"><button id="scheduleBtn">Schedule</button></li>
                 <li id="second-avail"><button id="scheduleBtn">Schedule</button></li>

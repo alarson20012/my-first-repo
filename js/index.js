@@ -283,7 +283,15 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("sixth-avail").textContent = `${sixthStartTime} - ${sixthEndTime} : ${sixthService}`;
 
         document.getElementById("availabilityModal").style.display = "none";
+        const btn = document.createElement("button");
+        btn.textContent = "X";
+        document.body.appendChild(btn);
+        btn.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
+
     });
+
 });
 
 
