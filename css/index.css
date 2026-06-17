@@ -43,7 +43,7 @@ nav {
     }
 
     nav {
-        display: none;
+        display: block;
         width: 60%;
         height: 30%;
         position: absolute;
