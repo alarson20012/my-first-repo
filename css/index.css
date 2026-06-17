@@ -114,6 +114,10 @@ main {
     align-items: center;
     width: clamp(40rem, 75%, 45rem);
     height: clamp(25rem, 50%, 50rem);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
 .calender {
