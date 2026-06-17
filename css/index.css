@@ -80,7 +80,7 @@ nav {
         object-fit: cover;
         object-position: center;
         display: block;
-        margin: 3fr 0;
+        margin: 3fr 3fr 3fr 3fr;
         justify-content: center;
         align-items: center;
         width: clamp(40rem, 75%, 45rem);
