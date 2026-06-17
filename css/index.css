@@ -75,10 +75,10 @@ nav {
         padding-bottom: 1rem;
         padding-left: 0.5rem;
         padding-right: 0.5rem;
-        object-fit: cover;
+        object-fit: scale-down;
         object-position: center;
         display: block;
-        margin-left: 3fr;
+        margin-left: 1fr;
         justify-content: center;
         align-items: center;
         width: clamp(160px, 100%, 280px);
