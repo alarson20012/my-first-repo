@@ -115,6 +115,9 @@ nav {
     .scheduleBtn {
         width: 100%;
         flex-grow: 1;
+        background-color: #555;
+        color: whitesmoke;
+
     }
 
 
