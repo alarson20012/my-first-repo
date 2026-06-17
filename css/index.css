@@ -75,7 +75,7 @@ nav {
         padding-bottom: 1rem;
         padding-left: 1rem;
         padding-right: 0.5rem;
-        object-fit: scale-down;
+        object-fit: cover;
         display: block;
         justify-content: center;
         align-items: center;
