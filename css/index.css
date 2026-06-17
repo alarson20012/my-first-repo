@@ -49,7 +49,7 @@ nav {
         position: absolute;
         top: 1fr;
         left: 1fr;
-        z-index: 1000;
+        /* z-index: 1000; */
     }
 
     nav li {
