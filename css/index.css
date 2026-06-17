@@ -94,7 +94,7 @@ nav {
         max-width: 100%;
     }
 
-    .modal {
+    #modal {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -103,6 +103,8 @@ nav {
         position: static;
         overflow-x: scroll;
     }
+
+
 }
 
 h1 {
