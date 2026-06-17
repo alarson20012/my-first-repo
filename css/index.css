@@ -80,7 +80,7 @@ nav {
         justify-content: center;
         align-items: center;
         width: clamp(15rem, 50%, 25rem);
-        height: clamp(5rem, 15rem, 25rem);
+        height: clamp(15rem, 15rem, 25rem);
     }
 }
 
