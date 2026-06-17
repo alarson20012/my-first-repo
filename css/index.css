@@ -79,7 +79,7 @@ nav {
         margin-left: 0.5fr;
         justify-content: center;
         align-items: center;
-        width: clamp(5rem, 50%, 25rem);
+        width: clamp(15rem, 50%, 25rem);
         height: clamp(5rem, 15rem, 25rem);
     }
 }
