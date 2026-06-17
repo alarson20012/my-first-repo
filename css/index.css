@@ -47,7 +47,7 @@ nav {
         display: none;
         width: 80%;
         height: auto;
-        position: fixed;
+        position: relative;
         top: 0;
         left: 0;
         z-index: 1000;
