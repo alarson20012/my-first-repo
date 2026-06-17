@@ -98,6 +98,8 @@ nav {
         display: block;
         align-items: center;
         justify-content: center;
+        width: 50%;
+        height: 50%;
     }
 }
 
