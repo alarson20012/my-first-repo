@@ -189,7 +189,7 @@ main {
     background-color: whitesmoke;
     border: 2px solid black;
     color: black;
-    display: hidden;
+    display: static;
     justify-content: center;
     align-items: center;
     z-index: 1000;
