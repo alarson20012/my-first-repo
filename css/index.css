@@ -54,7 +54,7 @@ nav {
     nav li {
         list-style-type: none;
         border: 2px solid black;
-        width: 60%;
+        width: 80%;
         height: fit-content;
         text-align: center;
         background-color: white;
