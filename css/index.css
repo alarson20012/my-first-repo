@@ -104,7 +104,7 @@ main {
     display: block;
     justify-content: center;
     align-items: center;
-    width: clamp(5rem, 5rem, 25rem);
+    width: clamp(5rem, 5rem, 15rem);
     height: clamp(25rem, 50%, 50rem);
     padding-top: 1rem;
     padding-bottom: 1rem;
