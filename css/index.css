@@ -106,6 +106,7 @@ nav {
         transform: translate(-50%, -50%);
         min-height: 60vh;
         max-width: 80vw;
+        width: 100%;
     }
 
 
