@@ -78,7 +78,7 @@ nav {
         object-fit: scale-down;
         object-position: center;
         display: flex;
-        margin-left: 5rem;
+        margin-left: 5%;
         justify-content: center;
         align-items: center;
         width: clamp(15rem, 50%, 25rem);
