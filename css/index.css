@@ -37,8 +37,10 @@ nav {
 
 /* mobile */
 @media (max-width: 768px) {
-    .hamburger {
-        display: block;
+    .menu-button {
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: white;
     }
 
     nav {
