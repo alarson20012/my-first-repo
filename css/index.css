@@ -78,6 +78,7 @@ nav {
         padding-left: 0.5rem;
         padding-right: 0.5rem;
         object-fit: scale-down;
+        object-fit: cover;
         object-position: center;
         display: block;
         margin: 3fr 0;
