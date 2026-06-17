@@ -49,13 +49,12 @@ nav {
         position: absolute;
         top: 1fr;
         left: 1fr;
-        /* z-index: 1000; */
     }
 
     nav li {
         list-style-type: none;
         border: 2px solid black;
-        width: 50%;
+        width: 100%;
         height: auto;
         text-align: center;
         background-color: white;
