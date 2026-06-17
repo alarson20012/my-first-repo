@@ -94,8 +94,7 @@ nav {
         max-width: 100%;
     }
 
-    #modal,
-    .modal-content {
+    #modal {
         display: none;
         align-items: center;
         justify-content: center;
