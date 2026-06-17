@@ -107,6 +107,7 @@ nav {
         min-height: 60vh;
         max-width: 80vw;
         width: 100%;
+        flex-grow: 1;
     }
 
 
