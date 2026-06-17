@@ -32,7 +32,6 @@ nav {
     position: fixed;
     left: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* mobile */
@@ -46,10 +45,10 @@ nav {
     nav {
         display: none;
         width: 80%;
-        height: auto;
+        height: 30%;
         position: absolute;
         top: 1fr;
-        left: 0;
+        left: 1fr;
         z-index: 1000;
     }
 
