@@ -96,7 +96,7 @@ nav {
 
     #modal,
     .modal-content {
-        display: flex;
+        display: none;
         align-items: center;
         justify-content: center;
         width: 70%;
