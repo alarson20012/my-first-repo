@@ -114,6 +114,7 @@ nav {
 
     .scheduleBtn {
         width: 100%;
+        flex-grow: 1;
     }
 
 
