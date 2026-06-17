@@ -101,6 +101,7 @@ nav {
         width: 70%;
         height: 50%;
         position: static;
+        overflow-x: scroll;
     }
 }
 
