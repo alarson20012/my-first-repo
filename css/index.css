@@ -93,6 +93,12 @@ nav {
         margin: 0 auto;
         max-width: 100%;
     }
+
+    .modal {
+        display: block;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 h1 {
