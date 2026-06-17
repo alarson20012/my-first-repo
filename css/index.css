@@ -73,8 +73,8 @@ nav {
     #profilePic {
         max-width: 40%;
         min-height: 40vh;
-        padding-top: 6rem;
-        padding-bottom: 4rem;
+        padding-top: 3rem;
+        padding-bottom: 1rem;
         padding-left: 1rem;
         padding-right: 1rem;
         object-fit: scale-down;
