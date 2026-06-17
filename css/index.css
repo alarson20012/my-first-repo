@@ -98,7 +98,8 @@ nav {
         max-width: 100%;
     }
 
-    #modal {
+    #modal,
+    #publicSchedule {
         display: hidden;
         position: absolute;
         top: 50%;
