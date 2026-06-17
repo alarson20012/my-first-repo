@@ -189,56 +189,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // uploadBtn.addEventListener("click", function () {
-    //     const fileInput = document.getElementById("photoUpload");
-    //     const file = fileInput.files && fileInput.files[0];
-    //     if (!file) {
-    //         alert("Please select an image file.");
-    //         return;
-    //     }
-
-    //     if (!file.type.startsWith("image/")) {
-    //         alert("Please select a valid image file.");
-    //         return;
-    //     }
-
-    //     const reader = new FileReader();
-
-    //     const formData = new FormData();
-    //     formData.append("photo", file);
-
-    //     try {
-    //         const response = fetch("/upload-photo", {
-    //             method: "POST",
-    //             body: formData
-    //         })
-
-    //         const data = await response.json();
-
-    //         document.getElementById("pfp-img").src = data.url;
-    //     } catch (error) {
-    //         console.error("Error uploading photo:", error);
-    //     }
-
-
-
-    //     reader.onload = function (e) {
-    //         const dataUrl = e.target.result;
-
-    //         document.getElementById("pfp-img").src = dataUrl;
-
-    //         // Save to localStorage
-    //         localStorage.setItem("profilePicture", dataUrl);
-
-    //         const modal = document.getElementById("editPhotoModal");
-    //         modal.style.display = "none";
-    //     };
-
-    //     reader.readAsDataURL(file);
-
-    // });
-
-
     // public schedule modal
     closePublic.addEventListener("click", () => {
         document.querySelector("#publicSchedule").style.display = "none";

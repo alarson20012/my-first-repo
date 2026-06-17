@@ -3,6 +3,12 @@ body {
     color: lightgray;
 }
 
+#menu-button {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: white;
+}
+
 nav li {
     list-style-type: none;
     border: 2px solid black;
@@ -25,8 +31,31 @@ nav {
     height: 42vh;
     position: fixed;
     left: 0;
-    transform: translateY(10%);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 
+/* mobile */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+    nav li {
+        width: 25%;
+        height: auto;
+        position: absolute;
+    }
 }
 
 h1 {
@@ -34,7 +63,7 @@ h1 {
     text-align: center;
 }
 
-#pfp-img {
+#profilePic {
     width: clamp(20rem, 40%, 45rem);
     height: clamp(25rem, 80%, 50rem);
     object-fit: scale-down;

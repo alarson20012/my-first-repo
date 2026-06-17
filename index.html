@@ -24,7 +24,7 @@
     </aside>
     <main>
     <button id="login" onclick="document.querySelector('#login').style.display = document.querySelector('#loginModal').style.display = 'block'">LOG-IN</button>
-    <img src="images/blankpfp.jpg" alt="Profile Picture" id="pfp-img">
+    <img src="images/blankpfp.jpg" alt="Profile Picture" id="profilePic">
     <button id="editPhotoBtn" style="display: none;"><i class="fa-solid fa-wand-magic-sparkles"></i></button>
     <div id="editPhotoModal" class="modal" style="display: none;">
         <div class="modal-content">
@@ -36,8 +36,6 @@
             <p id="status"></p>
         </div>
     </div>
-    
-     <img id="sharedPhoto" src="" alt="Shared Photo">
 
     <!-- LOGIN MODAL -->
         <div id="loginModal-overlay" class="modal-overlay"></div>
@@ -55,40 +53,39 @@
             </form>
         </div>
 
-            <!-- JAVASCRIPT -->
     <script>
-    // Load saved image on page load
-    fetch("currentPhoto.json")
-    .then(res => res.json())
-    .then(data => {
-        document.getElementById("sharedPhoto").src = data.url;
-    });
-
-    // Upload logic
-    document.getElementById("uploadBtn").onclick = function () {
+        document.getElementById("uploadBtn").onclick = async function () {
         const file = document.getElementById("photoInput").files[0];
-        if (!file) return alert("Choose a file first");
+        if (!file) {
+            alert("Choose a file first");
+            return;
+        }
 
         const formData = new FormData();
         formData.append("photo", file);
 
-        fetch("upload.php", {
-            method: "POST",
-            body: formData
-        })
-        .then(r => r.text())
-        .then(text => {
-            console.log(text);
+        try {
+            const response = await fetch("upload.php", {
+                method: "POST",
+                body: formData
+            });
 
-        // Reload image after upload
-        fetch("currentPhoto.json")
-        .then(res => res.json())
-        .then(data => {
-        document.getElementById("sharedPhoto").src = data.url;
-        });
-        });
+            const data = await response.json();
+            console.log("Upload response:", data);
+
+            if (data.url) {
+                // Update the image source and force refresh
+                document.getElementById("profilePic").src = data.url + "?t=" + Date.now();
+            } else {
+                alert("Upload failed");
+            }
+        } catch (error) {
+            console.error("Error uploading:", error);
+            alert("Upload error");
+        }
     };
-</script>
+    </script>
+
 
     <button id="bookBtn" onclick="document.querySelectorAll('#calendarDiv').forEach(div => div.style.display = 'block')">Book Now</button>
 
