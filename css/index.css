@@ -102,10 +102,6 @@ nav {
         transform: translate(-50%, -50%);
         align-items: center;
         justify-content: center;
-        width: 70%;
-        height: 50%;
-        overflow-x: scroll;
-        /* margin: 4rem 1fr 4rem 1rem; */
     }
 
 
