@@ -83,7 +83,7 @@ nav {
         margin-right: 3fr;
         justify-content: center;
         align-items: center;
-        width: clamp(40rem, 75%, 45rem);
+        width: clamp(160px, 85%, 280px);
         height: clamp(25rem, 50%, 50rem);
     }
 }
