@@ -106,7 +106,7 @@ nav {
         transform: translate(-50%, -50%);
         align-items: center;
         justify-content: center;
-        min-height: 100vh;
+        min-height: 60vh;
         max-width: 80vw;
     }
 
