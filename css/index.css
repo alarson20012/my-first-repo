@@ -73,16 +73,16 @@ nav {
     #profilePic {
         padding-top: 1rem;
         padding-bottom: 1rem;
-        padding-left: 0.5rem;
+        padding-left: 1rem;
         padding-right: 0.5rem;
-        object-fit: contain;
+        object-fit: scale-down;
         object-position: center;
         display: block;
         margin-left: 0.5fr;
         justify-content: center;
         align-items: center;
-        width: clamp(20rem, 70%, 280px);
-        height: clamp(25rem, 90%, 50rem);
+        width: clamp(20rem, 40%, 40rem);
+        height: clamp(25rem, 70%, 50rem);
     }
 }
 
