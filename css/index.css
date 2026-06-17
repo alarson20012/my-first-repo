@@ -78,7 +78,7 @@ nav {
         object-fit: cover;
         object-position: center;
         display: block;
-        margin-right: 3fr;
+        margin-left: 3fr;
         justify-content: center;
         align-items: center;
         width: clamp(160px, 85%, 280px);
