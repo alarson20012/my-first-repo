@@ -101,8 +101,6 @@ main {
 
 #profilePic {
     object-fit: scale-down;
-    left: 50%;
-    top: 50%;
     display: block;
     justify-content: center;
     align-items: center;
