@@ -88,7 +88,7 @@ nav {
         display: block;
         justify-content: center;
         align-items: center;
-        width: clamp(280px, 100%, 420px);
+        width: clamp(480px, 100%, 420px);
         height: auto;
         margin: 0 auto;
         max-width: 100%;
