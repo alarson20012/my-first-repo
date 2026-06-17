@@ -61,7 +61,8 @@ nav {
         color: black;
         border: gray 5px solid;
         display: block;
-        padding: 1px 1px 1 1;
+        padding: 1px 1px;
+        font-size: large;
 
     }
 
