@@ -75,8 +75,8 @@ nav {
         min-height: 40vh;
         padding-top: 3rem;
         padding-bottom: 1rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
         object-fit: scale-down;
         left: 50%;
         top: 50%;
