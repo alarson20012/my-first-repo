@@ -71,7 +71,7 @@ nav {
     }
 
     #profilePic {
-        max-width: 90%;
+        max-width: 40%;
         min-height: 40vh;
         padding-top: 3rem;
         padding-bottom: 1rem;
@@ -84,7 +84,7 @@ nav {
         margin: 3fr 0;
         justify-content: center;
         align-items: center;
-        width: clamp(20rem, 75%, 45rem);
+        width: clamp(40rem, 75%, 45rem);
         height: clamp(25rem, 50%, 50rem);
     }
 }
