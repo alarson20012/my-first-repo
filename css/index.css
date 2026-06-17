@@ -118,6 +118,10 @@ nav {
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 2;
+        min-height: 60vh;
+        max-width: 80vw;
+        width: 100%;
+        flex-grow: 1;
     }
 
     .scheduleBtn {
