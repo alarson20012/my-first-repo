@@ -112,12 +112,19 @@ nav {
         flex-grow: 1;
     }
 
+    #availabilityModal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+
     .scheduleBtn {
         width: 100%;
         flex-grow: 1;
-        background-color: #555;
+        background-color: black;
         color: whitesmoke;
-
     }
 
 
