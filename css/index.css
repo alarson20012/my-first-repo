@@ -104,8 +104,8 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: clamp(5rem, 5rem, 15rem);
-    height: clamp(5rem, 5rem, 15rem);
+    width: clamp(5rem, 10rem, 15rem);
+    height: clamp(5rem, 10rem, 15rem);
     padding-top: 1rem;
     padding-bottom: 1rem;
     padding-left: 0.5rem;
