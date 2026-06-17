@@ -99,7 +99,7 @@ nav {
     }
 
     #modal {
-        display: block;
+        display: hidden;
         position: absolute;
         top: 50%;
         left: 50%;
