@@ -1,20 +1,5 @@
 // Calendar Start
 document.addEventListener("DOMContentLoaded", function () {
-    // try {
-    //     const response = await fetch("/photo-url.json");
-    //     const data = await response.json();
-    //     document.getElementById("pfp-img").src = data.url;
-    // } catch (error) {
-    //     console.error("Error fetching profile picture URL:", error);
-    // }
-
-    // // Profile Picture
-    // const savedImg = localStorage.getItem("profilePicture");
-    // if (savedImg) {
-    //     document.getElementById("pfp-img").src = savedImg;
-    // }
-
-
     const monthYear = document.getElementById("month-year");
     const daysContainer = document.getElementById("days");
     const prevButton = document.getElementById("prev");
@@ -47,15 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
             daysContainer.appendChild(dayDiv);
         }
 
-        // current month's dates
-        // for (let i = 1; i <= lastDay; i++) {
-        //     const dayDiv = document.createElement("div");
-        //     dayDiv.textContent = i;
-        //     if (i === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
-        //         dayDiv.classList.add("today");
-        //     }
-        //     daysContainer.appendChild(dayDiv);
-        // }
         // current month's dates
         for (let i = 1; i <= lastDay; i++) {
             const dayDiv = document.createElement("div");
@@ -162,6 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
             addAvailability.style.display = "block"
             save.style.display = "block";
             loginModal.style.display = "none";
+            closeModal.style.display = "block";
             e.preventDefault();
         } else {
             publicSchedule.style.display = "block";
@@ -188,60 +165,110 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector("#editPhotoModal").style.display = "block";
     });
 
+    // upload pfp
+    const fileInput = document.getElementById("fileInput");
+    const status = document.getElementById("status");
+    const profilePic = document.getElementById("profilePic");
+
+    fetch("currentPhoto.json", { cache: "no-store" })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`Could not load saved photo (${response.status}).`);
+            }
+            return response.json();
+        })
+        .then((data) => {
+            if (typeof data.url !== "string" || !data.url) {
+                throw new Error("Saved photo data does not contain a valid URL.");
+            }
+            profilePic.src = data.url;
+        })
+        .catch((error) => {
+            console.error("Could not restore saved profile photo:", error);
+        });
+
+    document.getElementById("uploadBtn").addEventListener("click", async () => {
+        const [file] = fileInput.files;
+        if (!file) {
+            status.textContent = "Choose a photo first.";
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append("photo", file);
+        status.textContent = "Uploading...";
+
+        try {
+            const response = await fetch("upload.php", {
+                method: "POST",
+                body: formData,
+            });
+
+            const data = await response.json();
+            if (!response.ok || !data.url) {
+                throw new Error(data.error || "Upload failed.");
+            }
+
+            profilePic.src = `${data.url}?t=${Date.now()}`;
+            status.textContent = "Photo uploaded.";
+        } catch (error) {
+            status.textContent = `Upload error: ${error.message}`;
+        }
+    });
+
+
 
     // public schedule modal
     closePublic.addEventListener("click", () => {
         document.querySelector("#publicSchedule").style.display = "none";
-    })
+    });
 
     // inseting availability into calendar
-    save.addEventListener("click", function () {
+    document.getElementById("save").addEventListener("click", function (save) {
+        // CLOSE THE MODAL
+        document.getElementById("availabilityModal").style.display = "none";
+
+        // SHOW THE UPDATED LIST BEHIND THE MODAL
+        document.getElementById("availabilityList").style.display = "block";
+
         // FIRST AVAILABILITY
         const startTime = document.getElementById("first-start").value;
         const endTime = document.getElementById("first-end").value;
         const service = document.getElementById("first-service").value;
-        document.getElementById("first-avail").textContent = `${startTime} - ${endTime} : ${service}`;
+        document.getElementById("first-avail").innerHTML = `${startTime} - ${endTime} : ${service} <button class=scheduleBtn> Schedule </button>`;
 
         // SECOND AVAILABILITY
         const secondStartTime = document.getElementById("second-start").value;
         const secondEndTime = document.getElementById("second-end").value;
         const secondService = document.getElementById("second-service").value;
-        document.getElementById("second-avail").textContent = `${secondStartTime} - ${secondEndTime} : ${secondService}`;
+        document.getElementById("second-avail").innerHTML = `${secondStartTime} - ${secondEndTime} : ${secondService} <button class=scheduleBtn> Schedule </button>`;
 
         // THIRD AVAILABILITY
         const thirdStartTime = document.getElementById("third-start").value;
         const thirdEndTime = document.getElementById("third-end").value;
         const thirdService = document.getElementById("third-service").value;
-        document.getElementById("third-avail").textContent = `${thirdStartTime} - ${thirdEndTime} : ${thirdService}`;
+        document.getElementById("third-avail").innerHTML = `${thirdStartTime} - ${thirdEndTime} : ${thirdService} <button class=scheduleBtn> Schedule </button>`;
 
         // FOURTH AVAILABILITY
         const fourthStartTime = document.getElementById("fourth-start").value;
         const fourthEndTime = document.getElementById("fourth-end").value;
         const fourthService = document.getElementById("fourth-service").value;
-        document.getElementById("fourth-avail").textContent = `${fourthStartTime} - ${fourthEndTime} : ${fourthService}`;
+        document.getElementById("fourth-avail").innerHTML = `${fourthStartTime} - ${fourthEndTime} : ${fourthService} <button class=scheduleBtn> Schedule </button>`;
 
         // FIFTH AVAILABILITY
         const fifthStartTime = document.getElementById("fifth-start").value;
         const fifthEndTime = document.getElementById("fifth-end").value;
         const fifthService = document.getElementById("fifth-service").value;
-        document.getElementById("fifth-avail").textContent = `${fifthStartTime} - ${fifthEndTime} : ${fifthService}`;
+        document.getElementById("fifth-avail").innerHTML = `${fifthStartTime} - ${fifthEndTime} : ${fifthService} <button class=scheduleBtn> Schedule </button>`;
 
         // SIXTH AVAILABILITY
         const sixthStartTime = document.getElementById("sixth-start").value;
         const sixthEndTime = document.getElementById("sixth-end").value;
         const sixthService = document.getElementById("sixth-service").value;
-        document.getElementById("sixth-avail").textContent = `${sixthStartTime} - ${sixthEndTime} : ${sixthService}`;
-
-        document.getElementById("availabilityModal").style.display = "none";
-        const btn = document.createElement("button");
-        btn.textContent = "X";
-        document.body.appendChild(btn);
-        btn.addEventListener("click", function () {
-            modal.style.display = "none";
-        });
+        document.getElementById("sixth-avail").innerHTML = `${sixthStartTime} - ${sixthEndTime} : ${sixthService} <button class=scheduleBtn> Schedule </button>`;
 
     });
 
+
+
 });
-
-

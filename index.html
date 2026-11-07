@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="images/">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="js/index.js"></script>
+
 </head>
 <body>
     <header>
@@ -23,16 +23,16 @@
         </nav>
     </aside>
     <main>
-    <button id="login" onclick="document.querySelector('#login').style.display = document.querySelector('#loginModal').style.display = 'block'">LOG-IN</button>
-    <div id="img-cont">
-    <img src="images/blankpfp.jpg" alt="Profile Picture" id="profilePic">
-    </div>
-    <button id="editPhotoBtn" style="display: none;"><i class="fa-solid fa-wand-magic-sparkles"></i></button>
-    <div id="editPhotoModal" class="modal" style="display: none;">
+        <button id="login" onclick="document.querySelector('#login').style.display = document.querySelector('#loginModal').style.display = 'block'">LOG-IN</button>
+        <div id="img-cont">
+            <img src="images/blankpfp.jpg" alt="Profile Picture" id="profilePic">
+        </div>
+        <button id="editPhotoBtn" style="display: none;"><i class="fa-solid fa-wand-magic-sparkles"></i></button>
+        <div id="editPhotoModal" class="modal" style="display: none;">
         <div class="modal-content">
             <span id="closeEditPhoto" class="close" onclick="document.querySelector('#editPhotoModal').style.display = 'none'">&times;</span>
             <h2>Edit Profile Picture</h2>
-           <input type="file" id="photoInput">
+           <input type="file" id="fileInput" accept="image/*">
             <button id="uploadBtn">Upload</button>
            
             <p id="status"></p>
@@ -54,40 +54,6 @@
             </div>
             </form>
         </div>
-
-    <script>
-        document.getElementById("uploadBtn").onclick = async function () {
-        const file = document.getElementById("photoInput").files[0];
-        if (!file) {
-            alert("Choose a file first");
-            return;
-        }
-
-        const formData = new FormData();
-        formData.append("photo", file);
-
-        try {
-            const response = await fetch("upload.php", {
-                method: "POST",
-                body: formData
-            });
-
-            const data = await response.json();
-            console.log("Upload response:", data);
-
-            if (data.url) {
-                // Update the image source and force refresh
-                document.getElementById("profilePic").src = data.url + "?t=" + Date.now();
-            } else {
-                alert("Upload failed");
-            }
-        } catch (error) {
-            console.error("Error uploading:", error);
-            alert("Upload error");
-        }
-    };
-    </script>
-
 
     <button id="bookBtn" onclick="document.querySelectorAll('#calendarDiv').forEach(div => div.style.display = 'block')">Book Now</button>
 
@@ -114,48 +80,32 @@
         </div>
     </div>
 
+    <div id="modal"  class="modal hidden">
+        <span id="modal-date"></span>
+        <button id="closeSchedule" onclick="document.querySelector('#modal').classList.add('hidden')">&times;</button>
+        <ol>
+            <li id="first-avail"><button class="scheduleBtn">Schedule</button></li>
+            <li id="second-avail"><button class="scheduleBtn">Schedule</button></li>
+            <li id="third-avail"><button class="scheduleBtn">Schedule</button></li>
+            <li id="fourth-avail"><button class="scheduleBtn">Schedule</button></li>
+            <li id="fifth-avail"><button class="scheduleBtn">Schedule</button></li>
+            <li id="sixth-avail"><button class="scheduleBtn">Schedule</button></li>     
+        </ol>
+    </div>
+
+
+
     <!-- modal window -->
     <div id="modal" class="modal hidden">
         <div class="modal-content">
-        <button id="close-modal" class="close" onclick="document.querySelector('#availabilityModal').style.display = 'none'">&times;</button>
-         
-            <button class="adminFeature" id="addAvailability" onclick="document.getElementById('#availabilityModal').style.display = 'block'">Add Availability</button>
-            <h2 id="modal-date"></h2>
-            <h3>Available Times</h3>
-            <ul id="available-times">
-        <div id="publicSchedule" class="modal hidden"></div>
-        
-            <ul>
-                <li id="first-avail"><button class="scheduleBtn">Schedule</button></li>
-                <li id="second-avail"><button class="scheduleBtn">Schedule</button></li>
-                <li id="third-avail"><button class="scheduleBtn">Schedule</button></li>
-                <li id="fourth-avail"><button class="scheduleBtn">Schedule</button></li>
-                <li id="fifth-avail"><button class="scheduleBtn">Schedule</button></li>
-                <li id="sixth-avail"><button class="scheduleBtn">Schedule</button></li>
-            </ul>
-        </div>
-                
-                <!-- Available times will be populated here -->
-                <div id="availabilityModal" class="modal hidden">
-                    <ul>
-                        <button id="close-availability" class="close">&times;</button>
-                      
-                        <h2> Add Availability </h2>
-                        <li class="row">
-                            <!-- FIRST AVAILABILITY -->
-                            <label for="start" class="field">Start Time</label>
-                            <input type="time" id="first-start" class="field">
-                            <label for="end" class="field">End Time</label>
-                            <input type="time" id="first-end" class="field">
+           <div id="publicSchedule" class="modal hidden">
+                <button id="close-modal" class="close" onclick="document.querySelector('#availabilityModal').style.display = 'none'">&times;</button>
+                <button class="adminFeature" id="addAvailability" onclick="document.getElementById('#availabilityModal').style.display = 'block'">Add Availability</button>
+                <h2 id="modal-date"></h2>
+                <h3>Available Times</h3>
+                <ul id="availabilityList">
 
-                            <label for="service" class="field" style="display: inline;">Which service?</label>
-                            <select id="first-service" class="field">
-                                <option value="service 1">Service 1</option>
-                                <option value="service 2">Service 2</option>
-                                <option value="service 3">Service 3</option>
-                            </select>
-                        </li>
-                        <li class="row">
+                                        <li class="row">
                             <!-- SECOND AVAILABILITY -->
                             <label for="start" class="field">Start Time</label>
                             <input type="time" id="second-start" class="field">
@@ -225,28 +175,30 @@
                                 <option value="service 3">Service 3</option>
                             </select>
                         </li>
-                        <button id="save">Save</button>
-                    </ul>
-                </div>
+
+                    <li id="first-avail"><button class="scheduleBtn">Schedule</button></li>
+                    <li id="second-avail"><button class="scheduleBtn">Schedule</button></li>
+                    <li id="third-avail"><button class="scheduleBtn">Schedule</button></li>
+                    <li id="fourth-avail"><button class="scheduleBtn">Schedule</button></li>
+                    <li id="fifth-avail"><button class="scheduleBtn">Schedule</button></li>
+                    <li id="sixth-avail"><button class="scheduleBtn">Schedule</button></li>
+                </ul>
+           </div>
         </div>
     </div>
 
-    <div id="publicSchedule" class="modal hidden">
-        <span id="closePublic">&times;</span>
-        <h1>public view schedule</h1>
+    <div id="availabilityModal" class="modal hidden">
+        <button id="close-availability" class="close" onclick="document.getElementById('availabilityModal').style.display='none'">&times;</button>
+        <button id="save">Save</button>
         <ul>
-            <li> available time (input from admin) <button id="scheduleBtn">Schedule</button></li>
-            <li> available time (input from admin)<button id="scheduleBtn">Schedule</button></li>
-            <li> available time (input from admin)<button id="scheduleBtn">Schedule</button></li>
-            <li> available time (input from admin)<button id="scheduleBtn">Schedule</button></li>
-            <li> available time (input from admin)<button id="scheduleBtn">Schedule</button></li>
-            <li> available time (input from admin)<button id="scheduleBtn">Schedule</button></li>
+            <h2> Add Availability </h2>
+            
 
         </ul>
     </div>
-
     
-
+    
+    
     <script src="js/index.js"></script>
     <!-- calender end -->
     
